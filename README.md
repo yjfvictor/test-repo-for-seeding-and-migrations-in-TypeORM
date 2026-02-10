@@ -198,7 +198,7 @@ npm run typeorm -- migration:generate ./src/migrations/YourMigrationName -d ./sr
 
 ### Debugging
 
-- **Database connection**: Check `.env` and that the PostgreSQL container is running (`docker compose ps`). Logs: `docker compose logs postgres`.
+- **Database connection**: Check `.env` and that the PostgreSQL container is running (`docker-compose ps`). Logs: `docker-compose logs postgres`.
 - **Migrations**: TypeORM logs which migrations run. If a migration fails, fix the migration file or data and run again. You may need to fix the `migrations` table or revert first.
 - **Seed**: The seed script logs “Seeding complete: N item(s) inserted.” or an error. Ensure migrations have been run so the `item` table exists.
 - **API**: Use `npm run start:dev` for watch mode. Check that the port in use (default 3000) is free.
