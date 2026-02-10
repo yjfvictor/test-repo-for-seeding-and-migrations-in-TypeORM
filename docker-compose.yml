@@ -1,0 +1,22 @@
+# Docker Compose configuration for local PostgreSQL.
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    image: typeorm-migrations-postgres:15-alpine
+    container_name: typeorm-migrations-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: typeorm_migrations_db
+      LANG: en_GB.UTF-8
+      LC_ALL: en_GB.UTF-8
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

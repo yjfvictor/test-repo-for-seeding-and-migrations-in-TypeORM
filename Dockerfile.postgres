@@ -1,0 +1,9 @@
+# Dockerfile for PostgreSQL 15 Alpine
+
+FROM postgres:15-alpine
+
+# Install locale support so that en_GB.UTF-8 is available.
+RUN apk add --no-cache musl-locales musl-locales-lang
+
+ENV LANG=en_GB.UTF-8
+ENV LC_ALL=en_GB.UTF-8
